@@ -32,6 +32,7 @@ function navMob(){
     var menuWidth = mobMenu.innerWidth();
     var gnb = $('.gnb-mob').children('li')
     var winWidth
+    var menuRwdWidth
 
     mobMenu.css({'margin-left':-menuWidth});
 
@@ -39,8 +40,9 @@ function navMob(){
         mobMenu.stop().animate({'margin-left':0},400)
     })
     closeBtn.on('click', function(){
+        menuWidth = mobMenu.innerWidth();
         gnb.children('.submenu').slideUp(500);
-        mobMenu.stop().animate({'margin-left':-menuWidth*1.5},400);
+        mobMenu.stop().animate({'margin-left':-menuWidth},400);
     })
 
     gnb.each(function(index,data){
@@ -66,12 +68,15 @@ function navMob(){
         //console.log(winWidth)
         if(winWidth > 1024){
             mobMenu.hide();
+        }else if(winWidth > 490 && winWidth < 1024){
+            mobMenu.show();
+            menuRwdWidth = mobMenu.innerWidth();
+            //console.log(menuRwdWidth)
+            mobMenu.stop().animate({'margin-left':-menuRwdWidth},0);
         }else{
             mobMenu.show();
         }
     })
-
-
 }
 function visualSlide() {
     //visual
@@ -139,8 +144,6 @@ function kindMenu() { //리스트 메뉴 클릭이벤트
 
     activeCon.hide() //전체 숨김
     activeCon.eq(indexNum).show() //최초 보여질 인덱스
-
-    //windowEvent();
 
     menu.on('click', menuActive)
 
@@ -214,7 +217,7 @@ function resizeEvent() { //가로사이즈별 파란박스 높이 설정
 
         if (!window.matchMedia('(max-width:1024px)').matches) {
             ulTitle.next('ul').stop().slideDown(0)
-            $('.active-container').stop().animate({ 'height': h3 }, 500)
+            $('.active-container').css({ 'height': h3 })
         }
         else if (!window.matchMedia('(max-width:768px)').matches) {
             ulTitle.next('ul').stop().slideDown(0)
@@ -236,22 +239,23 @@ function newsSlide() {
 
     var boxContainer = $('.news-box-wrapper')
     var box = boxContainer.children()
-    var boxWidth = box.outerWidth(true)
+    var boxRwdWidth;
 
     boxContainer.children().each(function (index) { //each로 순번 다 돌려줌
         //console.log($(this).eq(index))
-        $(this).children('.news-img').css({ 'background-image': 'url(../../images/news_' + (index + 1) + '.jpg' })
+        $(this).children('.news-img').css({ 'background-image': 'url(../images/news_' + (index + 1) + '.jpg' })
     })
 
     setInterval(newsMove, 3000)
 
     function newsMove() {
-        boxContainer.stop().animate({ 'margin-left': -boxWidth }, 500, function () {
+        boxRwdWidth = box.outerWidth(true)
+        boxContainer.stop().animate({ 'margin-left': -boxRwdWidth }, 500, function () {
             boxContainer.children().first().appendTo(boxContainer)
             boxContainer.css({ 'margin-left': 0 })
+            //console.log(boxRwdWidth)
         })
     }
-
 }
 function bannerSlide() {
     var bannerWrap = $('.banner-wrap')
