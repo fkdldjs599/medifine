@@ -255,7 +255,6 @@ function newsSlide() {
         boxContainer.stop().animate({ 'margin-left': -boxRwdWidth }, 500, function () {
             boxContainer.children().first().appendTo(boxContainer)
             boxContainer.css({ 'margin-left': 0 })
-            console.log(boxRwdWidth)
         })
     }
 }
