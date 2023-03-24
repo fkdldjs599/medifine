@@ -32,6 +32,7 @@ function navMob(){
     var menuWidth = mobMenu.innerWidth();
     var gnb = $('.gnb-mob').children('li')
     var winWidth
+    var menuRwdWidth
 
     mobMenu.css({'margin-left':-menuWidth});
 
@@ -39,8 +40,9 @@ function navMob(){
         mobMenu.stop().animate({'margin-left':0},400)
     })
     closeBtn.on('click', function(){
+        menuWidth = mobMenu.innerWidth();
         gnb.children('.submenu').slideUp(500);
-        mobMenu.stop().animate({'margin-left':-menuWidth*1.5},400);
+        mobMenu.stop().animate({'margin-left':-menuWidth},400);
     })
 
     gnb.each(function(index,data){
@@ -66,12 +68,15 @@ function navMob(){
         //console.log(winWidth)
         if(winWidth > 1024){
             mobMenu.hide();
+        }else if(winWidth > 490 && winWidth < 1024){
+            mobMenu.show();
+            menuRwdWidth = mobMenu.innerWidth();
+            //console.log(menuRwdWidth)
+            mobMenu.stop().animate({'margin-left':-menuRwdWidth},0);
         }else{
             mobMenu.show();
         }
     })
-
-
 }
 function visualSlide() {
     //visual
