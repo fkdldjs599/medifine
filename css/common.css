@@ -338,7 +338,7 @@ footer .inner .footer-left .footer-logo:before {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url("../../images/logo_w.png") no-repeat center center/20px;
+  background: url("../images/logo_w.png") no-repeat center center/20px;
   margin-right: 10px;
 }
 footer .inner .footer-left p {
