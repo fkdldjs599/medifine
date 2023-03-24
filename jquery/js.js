@@ -240,7 +240,7 @@ function newsSlide() {
 
     boxContainer.children().each(function (index) { //each로 순번 다 돌려줌
         //console.log($(this).eq(index))
-        $(this).children('.news-img').css({ 'background-image': 'url(../images/news_' + (index + 1) + '.jpg' })
+        $(this).children('.news-img').css({ 'background-image': 'url("images/news_' + (index + 1) + '.jpg"' })
     })
 
     setInterval(newsMove, 3000)
