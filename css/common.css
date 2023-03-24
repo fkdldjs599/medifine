@@ -151,7 +151,7 @@ body, html {
   align-items: center;
 }
 .h-container .inner .logo a {
-  background: url("../../images/logo_w.png") no-repeat left center/25px 25px;
+  background: url("../images/logo_w.png") no-repeat left center/25px 25px;
   font-size: 25px;
   color: #ffffff;
   padding-left: 35px;
