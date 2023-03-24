@@ -219,7 +219,7 @@ function resizeEvent() { //가로사이즈별 파란박스 높이 설정
 
         if (!window.matchMedia('(max-width:1024px)').matches) {
             ulTitle.next('ul').stop().slideDown(0)
-            $('.active-container').stop().animate({ 'height': h3 }, 500)
+            $('.active-container').css({ 'height': h3 })
         }
         else if (!window.matchMedia('(max-width:768px)').matches) {
             ulTitle.next('ul').stop().slideDown(0)
