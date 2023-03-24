@@ -236,7 +236,7 @@ function newsSlide() {
 
     var boxContainer = $('.news-box-wrapper')
     var box = boxContainer.children()
-    var boxWidth = box.outerWidth(true)
+    var boxRwdWidth;
 
     boxContainer.children().each(function (index) { //each로 순번 다 돌려줌
         //console.log($(this).eq(index))
@@ -246,12 +246,13 @@ function newsSlide() {
     setInterval(newsMove, 3000)
 
     function newsMove() {
-        boxContainer.stop().animate({ 'margin-left': -boxWidth }, 500, function () {
+        boxRwdWidth = box.outerWidth(true)
+        boxContainer.stop().animate({ 'margin-left': -boxRwdWidth }, 500, function () {
             boxContainer.children().first().appendTo(boxContainer)
             boxContainer.css({ 'margin-left': 0 })
+            console.log(boxRwdWidth)
         })
     }
-
 }
 function bannerSlide() {
     var bannerWrap = $('.banner-wrap')
