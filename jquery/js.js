@@ -157,7 +157,6 @@ function kindMenu() { //리스트 메뉴 클릭이벤트
         activeCon.eq(indexNum).fadeIn(500)
 
         resizeEvent()
-        
     }
 
 }
