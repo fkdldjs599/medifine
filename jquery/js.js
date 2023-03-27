@@ -96,13 +96,14 @@ function visualSlide() {
     $('.slide-btn-list').children().on('click', imgSlide)
 
     function imgSlide() {
+        rwdEvent();
         indexNum = $('.slide-btn-list').children().index($(this));
         //console.log(indexNum)
 
         $('.slide-btn-list').children().removeClass('active')
         $('.slide-btn-list').children().eq(indexNum).addClass('active')
 
-        visualAll.stop().animate({ 'margin-left': -contentSize * indexNum }, 500)
+        visualAll.stop().animate({ 'margin-left': -visualImgWidth * indexNum }, 500)
     }
 
     autoPlay();
