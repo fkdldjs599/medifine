@@ -96,13 +96,14 @@ function visualSlide() {
     $('.slide-btn-list').children().on('click', imgSlide)
 
     function imgSlide() {
+        rwdEvent();
         indexNum = $('.slide-btn-list').children().index($(this));
         //console.log(indexNum)
 
         $('.slide-btn-list').children().removeClass('active')
         $('.slide-btn-list').children().eq(indexNum).addClass('active')
 
-        visualAll.stop().animate({ 'margin-left': -contentSize * indexNum }, 500)
+        visualAll.stop().animate({ 'margin-left': -visualImgWidth * indexNum }, 500)
     }
 
     autoPlay();
@@ -144,6 +145,8 @@ function kindMenu() { //리스트 메뉴 클릭이벤트
 
     activeCon.hide() //전체 숨김
     activeCon.eq(indexNum).show() //최초 보여질 인덱스
+
+    //windowEvent();
 
     menu.on('click', menuActive)
 
@@ -243,7 +246,7 @@ function newsSlide() {
 
     boxContainer.children().each(function (index) { //each로 순번 다 돌려줌
         //console.log($(this).eq(index))
-        $(this).children('.news-img').css({ 'background-image': 'url(../images/news_' + (index + 1) + '.jpg' })
+        $(this).children('.news-img').css({ 'background-image': 'url("images/news_' + (index + 1) + '.jpg"' })
     })
 
     setInterval(newsMove, 3000)
@@ -253,7 +256,6 @@ function newsSlide() {
         boxContainer.stop().animate({ 'margin-left': -boxRwdWidth }, 500, function () {
             boxContainer.children().first().appendTo(boxContainer)
             boxContainer.css({ 'margin-left': 0 })
-            //console.log(boxRwdWidth)
         })
     }
 }

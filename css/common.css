@@ -151,7 +151,7 @@ body, html {
   align-items: center;
 }
 .h-container .inner .logo a {
-  background: url("../../images/logo_w.png") no-repeat left center/25px 25px;
+  background: url("../images/logo_w.png") no-repeat left center/25px 25px;
   font-size: 25px;
   color: #ffffff;
   padding-left: 35px;
@@ -249,7 +249,7 @@ body, html {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background: url("../../images/arrow_bottom_black.png") no-repeat right center/15px;
+  background: url("../images/arrow_bottom_black.png") no-repeat right center/15px;
   vertical-align: middle;
   margin-top: -5px;
   transform: rotate(-90deg);
@@ -338,7 +338,7 @@ footer .inner .footer-left .footer-logo:before {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url("../../images/logo_w.png") no-repeat center center/20px;
+  background: url("../images/logo_w.png") no-repeat center center/20px;
   margin-right: 10px;
 }
 footer .inner .footer-left p {
@@ -1215,6 +1215,7 @@ footer .inner .footer-right .call p {
 }
 .location .traffic-wrapper {
   width: 100%;
+  margin-top: 20px;
 }
 .location .traffic-wrapper .bus, .location .traffic-wrapper .subway {
   display: flex;
