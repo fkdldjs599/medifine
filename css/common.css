@@ -29,6 +29,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+body,html {font-family: 'Pretendard Variable', sans-serif;}
+
 body {
   line-height: 1;
 }
