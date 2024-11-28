@@ -8,6 +8,7 @@ $(document).ready(function () {
     resizeEvent();
     newsSlide();
     bannerSlide();
+    scrollShow();
 
 })
 
@@ -449,3 +450,51 @@ function bannerSlide() {
 //         }
 //     }
 // }
+
+
+function scrollShow(){
+    var contentArr = [];
+    var length = $('.container section').length
+
+    for (i=0; i<length; i++){
+        contentArr.push($('.container section').eq(i).offset().top)
+    }
+
+    $(document).scroll(function(){
+        var scrolltop = $(document).scrollTop();
+
+       if(scrolltop < contentArr[1] + 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.medi-team .title-area, .medi-team .medi-team-content').css({'animation': 'show 800ms 100ms'});
+
+       }else if(scrolltop < contentArr[2] + 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.medi-kind .title-area, .medi-kind .medi-kind-content').css({'animation': 'show 800ms 100ms'});
+
+       }else if(scrolltop < contentArr[3] + 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.review .title-area, .review .review-content').css({'animation': 'show 800ms 100ms'});
+
+        }else if(scrolltop < contentArr[4] + 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.news .title-area, .news .news-content').css({'animation': 'show 800ms 100ms'});
+
+        }else if(scrolltop < contentArr[5] + 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.res .banner, .res .reservation-wrapper').css({'animation': 'show 800ms 100ms'});
+
+        }else if(scrolltop < contentArr[6] - 200) {
+            $('.container .section div').css({'animation': 'none'});
+
+            $('.location .title-area, .location .location-content').css({'animation': 'show 800ms 100ms'});
+
+        }else{
+            $('.container .section div').css({'animation': 'none'});
+        }
+    });
+}
