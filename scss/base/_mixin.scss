@@ -1,0 +1,66 @@
+@mixin contentPadding{
+    padding:100px 0px 150px;
+    box-sizing: border-box;
+}
+@mixin contentPaddingMob{
+    padding:50px 0px 20px;
+}
+@mixin titleArea{
+    width:95%;
+    height:60px;
+    display:flex;
+    align-items: center;
+    margin-bottom:120px;
+    transform:translateX(5%);
+}
+@mixin titleAreaLap{
+    width:100%;
+    height:200px;
+    flex-direction:column;
+    text-align: center;
+    margin-bottom:60px;
+    transform:translateX(0%);
+}
+@mixin title{
+    font-size:30px;
+    font-family: 'noto-bold';
+    margin-top:7px;
+}
+@mixin titleMobile{
+    font-size:18px;
+}
+@mixin titleAfter{
+    content: "";
+    display:inline-block;
+    width:5px;
+    height:60px;
+    vertical-align: middle;
+    margin: -8px 50px 0px;
+    background:$mainColor;
+}
+@mixin titleAfterLap{
+    width:50px;
+    height:5px;
+    display:block;
+    margin:30px auto; 
+}
+@mixin subTitle{
+    line-height:1.5;
+}
+@mixin subTitleMob{
+    font-size:14px;
+}
+@mixin subTitleMobile{
+    font-size:12px;
+    padding:0px 20px;
+    box-sizing: border-box;
+}
+@mixin ellipse($lineHeight, $line){
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:$line; //최대보여줄 줄 수는 line
+    -webkit-box-orient: vertical; //세로로 line 줄수만큼
+    line-height:$lineHeight;
+    max-height:$line*$lineHeight;
+}
