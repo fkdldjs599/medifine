@@ -190,15 +190,19 @@ body, html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60px;
+  padding: 18px 0;
 }
 .h-container .gnb-wrapper .gnb li .submenu {
   width: 100%;
   background: #ffffff;
   opacity: 0;
+  display: none;
   position: absolute;
-  top: 60px;
+  top: 55px;
   left: 0;
+}
+.h-container .gnb-wrapper .gnb li .submenu.on {
+  display: block;
 }
 .h-container .gnb-wrapper .gnb li .submenu li {
   display: block;
@@ -917,11 +921,11 @@ footer .inner .footer-right .call p {
 }
 .medi-kind .medi-kind-content .active-container .active-list .active-content .ul-left, .medi-kind .medi-kind-content .active-container .active-list .active-content .ul-right {
   width: 50%;
-  padding-left: 50px;
+  padding-left: 30px;
   box-sizing: border-box;
 }
 .medi-kind .medi-kind-content .active-container .active-list .active-content .ul-left h4, .medi-kind .medi-kind-content .active-container .active-list .active-content .ul-right h4 {
-  font-size: 30px;
+  font-size: 26px;
   padding: 30px 0px 25px;
   box-sizing: border-box;
   font-family: "noto-bold", sans-serif;

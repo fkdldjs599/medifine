@@ -8,6 +8,7 @@ $(document).ready(function () {
     resizeEvent();
     newsSlide();
     bannerSlide();
+    locationInfo();
 
     $(document).scroll(function(){
         headerfix();
@@ -16,7 +17,14 @@ $(document).ready(function () {
     noclick();
     youtube();
 
-})
+});
+
+function locationInfo(){
+    $('.visual .textarea .btn2').click(function(){
+        var locationH = $('.location').offset().top;
+        $('body, html').stop().animate({scrollTop: locationH - 141 +  'px'}, 500);
+    });
+}
 
 function youtube(){
     var src1 = "https://www.youtube.com/embed/caFdBkLUjiA";
@@ -59,14 +67,15 @@ function headerfix(){
 function nav() {
     //menu
     var menu = $('.gnb').children();
-    var submenu = $('.submenu');
 
     menu.on('mouseenter', function () {
-        $(this).children(submenu).stop().animate({ 'opacity': 1 }, 150)
+        $(this).find('.submenu').addClass('on');
+        $(this).find('.submenu').animate({'opacity': '1'}, 300);
 
     })
     menu.on('mouseleave', function () {
-        submenu.stop().animate({ 'opacity': 0 }, 150);
+        $(this).find('.submenu').removeClass('on');
+        $(this).find('.submenu').stop().animate({'opacity': '0'}, 300);
     })
 }
 function navMob(){
