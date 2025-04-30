@@ -383,7 +383,7 @@
                 .btntext{
                     display: inline-block;
                     vertical-align: middle;
-                    font-size:25px;
+                    font-size:20px;
                 }
                 .bx-plus{
                     font-size:30px;
@@ -436,10 +436,11 @@
                         margin-top:40px;
                         h3{
                             @include ellipse(1.5, 1);
+                            font-size: 16px;
                         }
                         p{
                             margin:20px 0px 35px;
-                            font-size:16px;
+                            font-size:14px;
                             line-height:1.5;
                             @include ellipse(1.5, 2);
                         }
@@ -463,11 +464,10 @@
             .all-btn{
                 color:$mainColor;
                 font-family: $bold;
-                font-size:25px;
+                font-size:20px;
                 .btntext{
                     display: inline-block;
                     vertical-align: middle;
-                    font-size:25px;
                 }
                 .bx-plus{
                     font-size:30px;
@@ -790,7 +790,7 @@
         margin:20px auto 0px;
         .all-btn{
             font-size:35px;
-            padding:20px 0px 25px;
+            padding:16px 0px 20px;
             width:100%;
             border:2px solid $mainColor;
             box-sizing: border-box;
@@ -821,13 +821,13 @@
         .all-btn{
             font-size:35px;
             color:$basicColor;
-            padding:20px 0px 25px;
+            padding:16px 0px 20px;
             width:90%;
             border:2px solid $basicColor;
             box-sizing: border-box;
             text-align: center;
             .bx-plus{
-                font-size:25px;
+                font-size:24px;
                 color:$basicColor;
             }
         }
@@ -1278,7 +1278,7 @@
                     height:180px;
                     padding:40px 30px;
                     p{
-                        font-size:17px;
+                        font-size:15px;
                     }
                     div{
                         font-size:15px;
@@ -1303,6 +1303,7 @@
             padding:20px 0px;
             .all-btn{
                 font-size:20px;
+                .btntext {font-size: 20px;}
             }
             .bx-plus{
                 font-size:20px;
